@@ -2,8 +2,10 @@ FROM fedora:latest
 MAINTAINER Andreas Jung <info@zopyx.com>
 RUN dnf -y update
 RUN dnf -y install python-virtualenv
-RUN virtualenv plone
-WORKDIR plone
-ADD bootstrap.py plone 
-COPY buildout.cfg plone 
+RUN virtualenv /tmp/plone
+WORKDIR /tmp/plone
+ADD bootstrap.py /tmp/plone
+ADD buildout.cfg /tmp/plone
+
+RUN bin/python bootstrap.py --setuptools-version=18.2
 CMD ls -la
