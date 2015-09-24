@@ -1,5 +1,4 @@
 FROM fedora:latest
-MAINTAINER Andreas Jung <info@zopyx.com>
 RUN dnf -y update
 RUN dnf -y install python-virtualenv
 RUN virtualenv /tmp/plone
