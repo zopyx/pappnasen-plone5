@@ -10,11 +10,11 @@ from zope.component import getUtility
 
 uf = app.acl_users
 user = uf.getUser('admin')
-#uf._doChangeUser('admin', admin_pw, ('Manager',), ())
 newSecurityManager(None, user.__of__(uf))
-addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default'])
+addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default', 'zopyx.ipsumplone:default'])
 
 site = app['plone']
+site.restrictedTraverse('@@demo-content')()
 print 'commited'
 transaction.commit()
 
