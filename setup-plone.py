@@ -11,7 +11,10 @@ from zope.component import getUtility
 uf = app.acl_users
 user = uf.getUser('admin')
 newSecurityManager(None, user.__of__(uf))
-addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default', 'zopyx.ipsumplone:default'])
+
+if 'plone' in app.objectIds():
+    app.manage_delObjects(['plone'])
+addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default', 'zopyx.ipsumplone:default', 'Products.PloneFormGen:default'])
 
 site = app['plone']
 site.restrictedTraverse('@@demo-content')()
