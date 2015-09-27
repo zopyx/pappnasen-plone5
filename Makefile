@@ -1,3 +1,5 @@
+all: build push
+
 build:
 	docker build -t zopyx/plone-50-demo .
 
