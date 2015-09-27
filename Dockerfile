@@ -12,5 +12,6 @@ ADD buildout.cfg /tmp/plone/
 RUN bin/python bootstrap.py --setuptools-version=18.2
 RUN bin/buildout
 ADD setup-plone.py /tmp/plone/
+ADD data /tmp/plone/data
 RUN bin/instance run setup-plone.py
 CMD bin/instance fg

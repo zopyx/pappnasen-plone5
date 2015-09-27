@@ -1,14 +1,14 @@
 
 import transaction
-import pkg_resources
-from Products.CMFPlone.factory import addPloneSite
-from AccessControl.SecurityManagement import newSecurityManager
+
+import plone.api
 from plone import namedfile
 from plone.registry.interfaces import IRegistry
 from plone.app.textfield.value import RichTextValue
-import plone.api
 from zope.component import getUtility
 
+from Products.CMFPlone.factory import addPloneSite
+from AccessControl.SecurityManagement import newSecurityManager
 
 uf = app.acl_users
 user = uf.getUser('admin')
@@ -16,7 +16,7 @@ newSecurityManager(None, user.__of__(uf))
 
 if 'plone' in app.objectIds():
     app.manage_delObjects(['plone'])
-addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default', 'zopyx.ipsumplone:default', 'Products.PloneFormGen:default'])
+addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default', 'zopyx.ipsumplone:default', 'Products.PloneFormGen:default', 'plone.app.multilingual:default'])
 
 plone.api.user.create(username='editor', password='editor', roles=('Member', 'Editor'), email="test@test.de")
 plone.api.user.create(username='reader', password='reader', roles=('Member', 'Reader'), email="test@test.de")
