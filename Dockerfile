@@ -1,6 +1,6 @@
 FROM fedora:latest
 RUN dnf -y update
-RUN dnf -y install python-virtualenv gcc-c++ libxml2-devel libxslt-devel libjpeg-devel zlib-devel 
+RUN dnf -y install python-virtualenv gcc-c++ libxml2-devel libxslt-devel libjpeg-devel zlib-devel redhat-rpm-config
 RUN useradd -ms /bin/bash plone
 USER plone 
 RUN virtualenv /tmp/plone
