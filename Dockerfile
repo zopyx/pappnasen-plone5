@@ -21,3 +21,4 @@ ADD data /tmp/plone/data
 USER plone
 RUN bin/instance run setup-plone.py
 CMD bin/instance fg
+
