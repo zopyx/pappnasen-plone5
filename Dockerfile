@@ -16,9 +16,11 @@ RUN bin/python bootstrap.py --setuptools-version=18.2
 RUN bin/buildout
 USER root
 ADD setup-plone.py /tmp/plone/
+ADD setup-smashdocs.py /tmp/plone/
 run chown -R plone.plone /tmp/plone
 ADD data /tmp/plone/data
 USER plone
 RUN bin/instance run setup-plone.py
+RUN bin/instance run setup-smashdocs.py
 CMD bin/instance fg
 
