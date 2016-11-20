@@ -9,7 +9,7 @@ from zope.component.hooks import setSite
 uf = app.acl_users
 user = uf.getUser('admin')
 newSecurityManager(None, user.__of__(uf))
-import pdb; pdb.set_trace()
+
 site = app['plone']
 setSite(site)
 
