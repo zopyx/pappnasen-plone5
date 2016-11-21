@@ -1,4 +1,4 @@
-
+import uuid
 import transaction
 
 from zope.component import getUtility
@@ -6,12 +6,23 @@ from plone.registry.interfaces import IRegistry
 from zopyx.plone.smashdocs.interfaces import ISmashdocsSettings
 from zope.component.hooks import setSite
 
+import plone.api
+
 uf = app.acl_users
 user = uf.getUser('admin')
 newSecurityManager(None, user.__of__(uf))
 
 site = app['plone']
 setSite(site)
+
+plone.api.user.create(username='sd-editor', password='sd-editor', roles=('Contributor', 'SD Editor'), email="test@test.de")
+plone.api.user.create(username='sd-commentator', password='sd-commentator', roles=('Contributor', 'SD Commenator'), email="test@test.de")
+plone.api.user.create(username='sd-reader', password='sd-reader', roles=('Contributor', 'SD Reader'), email="test@test.de")
+plone.api.user.create(username='sd-approver', password='sd-approver', roles=('Contributor', 'SD Approver'), email="test@test.de")
+
+
+sd = plone.api.content.create('SmashFolder', container=site, id='sd-workspace', title=u'Smashdocs Workgroup Folder')
+sd.group_id = str(uuid.uuid4())
 
 registry = getUtility(IRegistry)
 settings = registry.forInterface(ISmashdocsSettings)
