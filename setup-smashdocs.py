@@ -20,7 +20,6 @@ plone.api.user.create(username='sd-commentator', password='sd-commentator', role
 plone.api.user.create(username='sd-reader', password='sd-reader', roles=('Contributor', 'SD Reader'), email="test@test.de")
 plone.api.user.create(username='sd-approver', password='sd-approver', roles=('Contributor', 'SD Approver'), email="test@test.de")
 
-
 sd = plone.api.content.create(type='SmashFolder', container=site, id='sd-workspace', title=u'Smashdocs Workgroup Folder')
 sd.group_id = str(uuid.uuid4())
 
