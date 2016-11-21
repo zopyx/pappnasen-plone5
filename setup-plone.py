@@ -8,8 +8,6 @@ from plone.app.textfield.value import RichTextValue
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 
-
-
 from Products.CMFPlone.factory import addPloneSite
 from AccessControl.SecurityManagement import newSecurityManager
 
