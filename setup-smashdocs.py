@@ -21,7 +21,7 @@ plone.api.user.create(username='sd-reader', password='sd-reader', roles=('Contri
 plone.api.user.create(username='sd-approver', password='sd-approver', roles=('Contributor', 'SD Approver'), email="test@test.de")
 
 
-sd = plone.api.content.create('SmashFolder', container=site, id='sd-workspace', title=u'Smashdocs Workgroup Folder')
+sd = plone.api.content.create(type='SmashFolder', container=site, id='sd-workspace', title=u'Smashdocs Workgroup Folder')
 sd.group_id = str(uuid.uuid4())
 
 registry = getUtility(IRegistry)
