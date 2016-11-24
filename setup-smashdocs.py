@@ -16,7 +16,7 @@ site = app['plone']
 setSite(site)
 
 plone.api.user.create(username='sd-editor', password='sd-editor', roles=('Contributor', 'SD Editor'), email="test@test.de")
-plone.api.user.create(username='sd-commentator', password='sd-commentator', roles=('Reader', 'SD Commenator'), email="test@test.de")
+plone.api.user.create(username='sd-commentator', password='sd-commentator', roles=('Reader', 'SD Commentator'), email="test@test.de")
 plone.api.user.create(username='sd-reader', password='sd-reader', roles=('Reader', 'SD Reader'), email="test@test.de")
 plone.api.user.create(username='sd-approver', password='sd-approver', roles=('Contributor', 'SD Approver'), email="test@test.de")
 
