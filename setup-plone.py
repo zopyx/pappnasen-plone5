@@ -17,7 +17,7 @@ newSecurityManager(None, user.__of__(uf))
 
 if 'plone' in app.objectIds():
     app.manage_delObjects(['plone'])
-addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default', 'zopyx.ipsumplone:default', 'Products.PloneFormGen:default', 'plone.app.multilingual:default', 'plone.app.multilingual:default', 'Products.PloneFormGen:default', 'zopyx.plone.smashdocs:default'])
+addPloneSite(app, 'plone', extension_ids=['plonetheme.barceloneta:default', 'zopyx.ipsumplone:default', 'Products.PloneFormGen:default', 'plone.app.multilingual:default', 'plone.app.multilingual:default', 'Products.PloneFormGen:default', 'zopyx.plone.smashdocs:default', 'pp.client.plone:default'])
 
 plone.api.user.create(username='editor', password='editor', roles=('Member', 'Editor'), email="test@test.de")
 plone.api.user.create(username='reader', password='reader', roles=('Member', 'Reader'), email="test@test.de")
