@@ -5,14 +5,15 @@ RUN useradd -ms /bin/bash plone
 USER plone 
 RUN virtualenv /tmp/plone
 WORKDIR /tmp/plone
-ADD bootstrap.py /tmp/plone/
 ADD buildout.cfg /tmp/plone/
 #ADD setup-plone.py /tmp/plone/
 USER root
 run chown -R plone.plone /tmp/plone
 USER plone
 
-RUN bin/python bootstrap.py --setuptools-version=18.2
+#RUN bin/python bootstrap.py --setuptools-version=18.2
+RUN bin/pip install zc.buildout==2.5.2
+RUN bin/buildout bootstrap
 RUN bin/buildout
 USER root
 ADD setup-plone.py /tmp/plone/
