@@ -21,7 +21,7 @@ addPloneSite(
     'plone',
     extension_ids=[
         'plonetheme.barceloneta:default', 'zopyx.ipsumplone:default',
-        'Products.PloneFormGen:default',
+        'Products.PloneFormGen:default', 'plone.restapi:default',
         'plone.app.multilingual:default', 'Products.PloneFormGen:default',
         'zopyx.plone.smashdocs:default', 'pp.client.plone:default'
     ])
