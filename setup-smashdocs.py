@@ -46,8 +46,9 @@ sd.group_id = str(uuid.uuid4())
 
 registry = getUtility(IRegistry)
 settings = registry.forInterface(ISmashdocsSettings)
-settings.client_id = u'd674ed8c5aa073f12fc73b94a232b9eb3cfe8da5de703ad6c0a40e998395ddda'
-settings.client_key = u'c35cb21efd1acc1771c92fe7a43ab8a78287b5ca5c07f01c4a462f75464e8dfe'
+settings.client_id = u'369bc312a9def6860435049c342f0b3df940cee0565e1c7386dc360d084bdfb7'
+settings.client_key = u'0e66de1966d9d9217fca0b70010fab0dd12b741a229eb6beea5807bb7c29700c'
+settings.partner_url = u'https://zopyx.smashdocs.net/api'
 
 registry = getUtility(IRegistry)
 settings = registry.forInterface(IPPClientPloneSettings)
