@@ -2,9 +2,8 @@ FROM fedora:latest
 RUN dnf -y update
 RUN dnf -y install python-virtualenv gcc-c++ libxml2-devel libxslt-devel libjpeg-devel zlib-devel redhat-rpm-config libffi-devel openssl-devel file
 RUN useradd -ms /bin/bash plone
-RUN virtualenv --clear /tmp/plone
+RUN python3 -m venv  /tmp/plone
 WORKDIR /tmp/plone
-ADD bootstrap.py /tmp/plone/
 ADD buildout.cfg /tmp/plone/
 ADD requirements.txt /tmp/plone/
 RUN chown -R plone /tmp/plone
