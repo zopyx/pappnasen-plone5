@@ -1,6 +1,7 @@
 FROM fedora:latest
 RUN dnf -y update
-RUN dnf -y install python-virtualenv gcc-c++ libxml2-devel libxslt-devel libjpeg-devel zlib-devel redhat-rpm-config libffi-devel openssl-devel file
+RUN dnf -y install python-virtualenv gcc-c++ libxml2-devel libxslt-devel libjpeg-devel zlib-devel redhat-rpm-config libffi-devel openssl-devel file python3-devel
+RUN python3 --version
 RUN useradd -ms /bin/bash plone
 RUN python3 -m venv  /tmp/plone
 WORKDIR /tmp/plone
@@ -16,11 +17,11 @@ USER plone
 RUN bin/buildout
 USER root
 ADD setup-plone.py /tmp/plone/
-ADD setup-smashdocs.py /tmp/plone/
+#ADD setup-smashdocs.py /tmp/plone/
 ADD data /tmp/plone/data
 run chown -R plone.plone /tmp/plone
 USER plone
 RUN bin/instance run setup-plone.py
-RUN bin/instance run setup-smashdocs.py
+#RUN bin/instance run setup-smashdocs.py
 CMD bin/instance fg
 
