@@ -21,7 +21,7 @@ addPloneSite(
     'plone',
     extension_ids=[
         'plonetheme.barceloneta:default', 
-#'zopyx.ipsumplone:default',
+#        'zopyx.ipsumplone:default',
 #'Products.PloneFormGen:default', 
 #'plone.restapi:default',
 #'plone.app.multilingual:default', 
@@ -52,7 +52,7 @@ plone.api.user.create(
     email="test@test.de")
 
 site = app['plone']
-site.restrictedTraverse('@@demo-content')()
+#site.restrictedTraverse('@@demo-content')()
 
 fp = site['front-page']
 fp.setTitle(u'Plone 5 demo site')
@@ -61,8 +61,8 @@ fp.setDescription(
 )
 with open('data/frontpage.html', 'rb') as handle:
     fp.text = RichTextValue(
-        unicode(handle.read(), 'utf8'), 'text/html', 'text/html')
+        str(handle.read(), 'utf8'), 'text/html', 'text/html')
 fp.reindexObject()
 
-print 'commited'
+print('commited')
 transaction.commit()
