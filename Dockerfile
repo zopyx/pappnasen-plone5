@@ -17,11 +17,11 @@ USER plone
 RUN bin/buildout
 USER root
 ADD setup-plone.py /tmp/plone/
-#ADD setup-smashdocs.py /tmp/plone/
+ADD setup-smashdocs.py /tmp/plone/
 ADD data /tmp/plone/data
 run chown -R plone.plone /tmp/plone
 USER plone
 RUN bin/wsgi.py run setup-plone.py
-#RUN bin/instance run setup-smashdocs.py
+RUN bin/wsgi.py run setup-smashdocs.py
 CMD bin/wsgi.py fg
 

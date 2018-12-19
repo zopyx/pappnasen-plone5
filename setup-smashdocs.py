@@ -55,5 +55,5 @@ settings = registry.forInterface(IPPClientPloneSettings)
 settings.server_username = u'demo'
 settings.server_password = u'demo'
 
-print 'commited'
+print('commited')
 transaction.commit()
