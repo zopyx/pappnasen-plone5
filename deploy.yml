@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plone52
+  labels:
+    app: plone52
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: plone52
+  template:
+    metadata:
+      labels:
+        app: plone52
+    spec:
+      containers:
+        - name: plone52
+          image: zopyx/plone-52-demo
+          ports:
+            - containerPort: 8080
