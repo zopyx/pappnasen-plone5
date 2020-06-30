@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: plone52
+  labels:
+      name: plone
+
+spec:
+  containers:
+  - name: plone-52
+    image: zopyx/plone-52-demo
+    ports:
+    - containerPort: 8080

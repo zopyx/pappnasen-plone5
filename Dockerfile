@@ -17,7 +17,7 @@ USER plone
 RUN bin/buildout
 USER root
 ADD setup-plone.py /tmp/plone/
-ADD setup-smashdocs.py /tmp/plone/
+#ADD setup-smashdocs.py /tmp/plone/
 ADD data /tmp/plone/data
 run chown -R plone.plone /tmp/plone
 USER plone
