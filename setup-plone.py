@@ -26,8 +26,8 @@ addPloneSite(
 #'plone.restapi:default',
 #'plone.app.multilingual:default', 
 #'Products.PloneFormGen:default',
-'zopyx.plone.smashdocs:default', 
-'pp.client.plone:default',
+#'zopyx.plone.smashdocs:default', 
+#'pp.client.plone:default',
 'plonetheme.tokyo:default',
 'collective.easyform:default',
 'xmldirector.connector:default'
