@@ -24,3 +24,4 @@ USER plone
 RUN bin/wsgi.py run setup-plone.py
 #RUN bin/wsgi.py run setup-smashdocs.py
 CMD bin/wsgi.py fg
+
