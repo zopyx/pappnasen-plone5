@@ -1,4 +1,4 @@
-FROM fedora:latest
+FROM fedora:32
 RUN dnf -y update
 RUN dnf -y install python-virtualenv gcc-c++ libxml2-devel libxslt-devel libjpeg-devel zlib-devel redhat-rpm-config libffi-devel openssl-devel file python3-devel
 RUN python3 --version
