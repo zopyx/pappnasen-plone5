@@ -20,11 +20,10 @@ addPloneSite(
     app,
     'plone',
     extension_ids=[
-        'plonetheme.barceloneta:default', 'zopyx.ipsumplone:default',
+        'zopyx.ipsumplone:default',
         'collective.easyform:default',
         'plone.restapi:default',
         'plone.app.multilingual:default', 
-        'zopyx.plone.smashdocs:default', 'pp.client.plone:default'
     ])
 
 plone.api.user.create(
@@ -50,16 +49,18 @@ plone.api.user.create(
 
 site = app['plone']
 site.restrictedTraverse('@@demo-content')()
+print(site.objectIds())
 
-fp = site['front-page']
-fp.setTitle(u'Plone 5 demo site')
+fp = plone.api.content.create(container=site, type="Document", id="front-page", title="front-page")
+plone.api.content.transition(fp, "publish")
+fp.setTitle(u'Plone 6 demo site')
 fp.setDescription(
-    u'Welcome to the Plone 5 demo website - provided by ZOPYX. Feel free to play around with Plone 5!'
+    u'Welcome to the Plone 6 demo website - provided by ZOPYX. Feel free to play around with Plone 5!'
 )
-with open('data/frontpage.html', 'rb') as handle:
+with open('data/frontpage.html', 'r') as handle:
     fp.text = RichTextValue(
-        unicode(handle.read(), 'utf8'), 'text/html', 'text/html')
+        handle.read(), "text/html", "text/html")
 fp.reindexObject()
 
-print 'commited'
+print('commited')
 transaction.commit()
