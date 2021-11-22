@@ -57,10 +57,14 @@ fp.setTitle(u'Plone 6 demo site')
 fp.setDescription(
     u'Welcome to the Plone 6 demo website - provided by ZOPYX. Feel free to play around with Plone 5!'
 )
+
+
 with open('data/frontpage.html', 'r') as handle:
     fp.text = RichTextValue(
         handle.read(), "text/html", "text/html")
 fp.reindexObject()
+
+site.default_page = "front-page"
 
 print('commited')
 transaction.commit()
