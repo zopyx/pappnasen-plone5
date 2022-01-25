@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 setuptools==54.0.0
 zc.buildout==3.0.0b2
 wheel
 
+=======
+setuptools ==54.0.0 
+zc.buildout == 3.0.0b2 
+>>>>>>> cd85ba7f1d042311f560621bc7f964305f784401
