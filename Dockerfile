@@ -1,4 +1,4 @@
-FROM fedora:35
+FROM fedora:34
 RUN dnf -y update
 RUN dnf -y install python-virtualenv gcc-c++ libxml2-devel libxslt-devel libjpeg-devel zlib-devel redhat-rpm-config libffi-devel openssl-devel file python3-devel
 RUN python3 --version
@@ -9,6 +9,7 @@ ADD buildout.cfg /tmp/plone/
 ADD requirements.txt /tmp/plone/
 RUN chown -R plone /tmp/plone
 USER plone 
+run python3 --version
 RUN bin/pip install -U pip
 RUN bin/pip install -r requirements.txt
 #ADD setup-plone.py /tmp/plone/
