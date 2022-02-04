@@ -10,12 +10,14 @@ ADD requirements.txt /tmp/plone/
 RUN chown -R plone /tmp/plone
 USER plone 
 run python3 --version
-RUN bin/pip install -U pip
+RUN bin/pip --version
 RUN bin/pip install -r requirements.txt
 #ADD setup-plone.py /tmp/plone/
 USER root
 run chown -R plone.plone /tmp/plone
 USER plone
+RUN bin/buildout --version
+RUN bin/pip freeze
 RUN bin/buildout
 USER root
 ADD setup-plone.py /tmp/plone/
