@@ -27,5 +27,6 @@ run chown -R plone.plone /tmp/plone
 USER plone
 RUN bin/wsgi.py run setup-plone.py
 #RUN bin/wsgi.py run setup-smashdocs.py
+expose 8080
 CMD bin/wsgi.py fg
 
