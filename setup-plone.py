@@ -58,9 +58,9 @@ site = app['plone']
 
 fp = plone.api.content.create(container=site, type="Document", id="front-page", title="Front page")
 plone.api.content.transition(fp, "publish")
-fp.setTitle(u'Plone 5 demo site')
+fp.setTitle(u'Plone 6 demo site')
 fp.setDescription(
-    u'Welcome to the Plone 5 demo website - provided by ZOPYX. Feel free to play around with Plone 5!'
+    u'Welcome to the Plone 6 demo website - provided by ZOPYX. Feel free to play around with Plone 5!'
 )
 with open('data/frontpage.html', 'rb') as handle:
     fp.text = RichTextValue(
