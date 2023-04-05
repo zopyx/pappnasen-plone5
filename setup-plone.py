@@ -50,25 +50,25 @@ setSite(site)
 
 plone.api.user.create(
     username="editor",
-    password="editor",
+    password="editorpw",
     roles=("Member", "Editor"),
     email="test@test.de",
 )
 plone.api.user.create(
     username="reader",
-    password="reader",
+    password="readerpw",
     roles=("Member", "Reader"),
     email="test@test.de",
 )
 plone.api.user.create(
     username="admin2",
-    password="admin2",
+    password="admin2pw",
     roles=("Member", "Manager"),
     email="test@test.de",
 )
 plone.api.user.create(
     username="siteadmin",
-    password="siteadmin",
+    password="siteadminpw",
     roles=("Member", "Site Administrator"),
     email="test@test.de",
 )
